@@ -1,0 +1,27 @@
+.artwork-details{
+
+    display:grid;
+
+    gap:2rem;
+
+}
+
+.artwork-image{
+
+    width:100%;
+
+    border-radius:20px;
+
+}
+
+.artwork-info h2{
+
+    margin-bottom:1rem;
+
+}
+
+.artwork-info p{
+
+    line-height:1.8;
+
+}

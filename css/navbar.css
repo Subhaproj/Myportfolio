@@ -1,0 +1,125 @@
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:var(--background);
+
+    opacity:.95;
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:75px;
+
+}
+
+.logo{
+
+    color:var(--text);
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.menu-btn{
+
+    background:none;
+
+    border:none;
+
+    color:var(--text);
+
+    font-size:2rem;
+
+    cursor: pointer;
+
+}
+
+.navbar{
+
+    display:none;
+
+    flex-direction:column;
+
+    position:absolute;
+
+    top:75px;
+
+    left:0;
+
+    width:100%;
+
+    background:var(--card);
+
+}
+
+.navbar a{
+
+    padding:18px;
+
+    color:var(--text);
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    background:var(--primary);
+
+}
+
+.navbar.show{
+
+    display:flex;
+
+}
+
+.theme-toggle{
+
+    background:none;
+
+    border:none;
+
+    color:var(--text);
+
+    font-size:1.2rem;
+
+    margin-left:1rem;
+
+    transition:.3s;
+
+}
+
+.theme-toggle:hover{
+
+    transform:rotate(20deg) scale(1.1);
+
+}

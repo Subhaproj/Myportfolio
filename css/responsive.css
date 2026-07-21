@@ -1,0 +1,126 @@
+@media (min-width:768px){
+
+.menu-btn{
+
+display:none;
+
+}
+
+.navbar{
+
+display:flex;
+
+position:static;
+
+flex-direction:row;
+
+width:auto;
+
+background:none;
+
+gap:2rem;
+
+}
+
+.navbar a{
+
+padding:0;
+
+}
+
+.navbar a:hover{
+
+background:none;
+
+color:var(--primary);
+
+}
+
+}
+
+/* ===========================
+   DESKTOP HERO
+=========================== */
+
+@media (min-width:1024px){
+
+.hero-container{
+
+flex-direction:row;
+
+justify-content:space-between;
+
+text-align:left;
+
+}
+
+.hero-content{
+
+flex:1;
+
+}
+
+.hero-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.hero-buttons{
+
+flex-direction:row;
+
+}
+
+}
+/* ===========================
+   PROJECT GRID
+=========================== */
+
+@media (min-width:768px){
+
+.projects-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media (min-width:1200px){
+
+.projects-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+/* ===============================
+   Skills Responsive
+================================ */
+
+@media(min-width:768px){
+
+    .skills-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(min-width:1100px){
+
+    .skills-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}

@@ -1,0 +1,64 @@
+/* ==========================
+   DARK THEME (DEFAULT)
+========================== */
+
+:root{
+
+    --background:#0F172A;
+
+    --surface:#1E293B;
+
+    --card:#1E293B;
+
+    --text:#F8FAFC;
+
+    --text-light:#94A3B8;
+
+    --primary:#3B82F6;
+
+    --border:rgba(255,255,255,.08);
+
+    --button-text:#FFFFFF;
+
+    --shadow:0 10px 30px rgba(0,0,0,.30);
+
+    --primary-soft:rgba(59,130,246,.15);
+
+    --modal-close-bg:#FFFFFF;
+
+    --modal-close-text:#0F172A;
+
+}
+
+
+/* ==========================
+   LIGHT THEME
+========================== */
+
+body.light-theme{
+
+    --background:#F8FAFC;
+
+    --surface:#FFFFFF;
+
+    --card:#FFFFFF;
+
+    --text:#0F172A;
+
+    --text-light:#475569;
+
+    --primary:#2563EB;
+
+    --border:rgba(15,23,42,.08);
+
+    --button-text:#FFFFFF;
+
+    --shadow:0 10px 30px rgba(0,0,0,.12);
+
+    --primary-soft:rgba(59,130,246,.15);
+
+    --modal-close-bg:#E2E8F0;
+
+    --modal-close-text:#0F172A; 
+
+}

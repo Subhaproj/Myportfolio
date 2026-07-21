@@ -1,0 +1,55 @@
+/* ===========================
+   PORTFOLIO VIEW
+=========================== */
+
+.portfolio-view{
+
+    min-height:100vh;
+
+    padding:80px 0;
+
+    background:var(--background);
+
+}
+
+.portfolio-container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:40px;
+
+    cursor:pointer;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.view-title{
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.view-description{
+
+    color:var(--text-light);
+
+    margin-bottom:40px;
+
+}
