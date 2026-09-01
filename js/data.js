@@ -100,7 +100,7 @@ const portfolio = {
                     id: "portfolio",
                     title: "My Talents",
                     description: "Web application using HTML,Css,JS.",
-                    image: "assets/software/portfolio/1.png",
+                    image: "assets/software/portfolio/home.png",
                     works: []
                 },
                 {
