@@ -1,16 +1,25 @@
+.artwork-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:20px;
+
+    
+
+}
 .artwork-details{
 
     display:grid;
 
-    gap:2rem;
+    gap:3rem;
 
-}
+    align-items:start;
 
-.artwork-image{
+    margin-top: 40px;
 
-    width:100%;
-
-    border-radius:20px;
+    
 
 }
 
@@ -20,8 +29,65 @@
 
 }
 
-.artwork-info p{
+.artwork-category{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+.artwork-description{
+
+    color:var(--text-light);
 
     line-height:1.8;
+
+}
+
+@media (min-width:900px){
+
+    .artwork-details{
+
+        grid-template-columns:1.4fr 1fr;
+
+    }
+
+}
+
+/* ===============================
+   VIDEO
+================================ */
+
+.work-video{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/* ===============================
+   ARTWORK DETAIL VIDEO
+================================ */
+
+.artwork-video{
+
+    width:100%;
+
+    max-height:600px;
+
+    display:block;
+
+    border-radius:20px;
+
+    background:#000;
 
 }
