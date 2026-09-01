@@ -16,7 +16,7 @@ function showCollections(categoryId) {
     home.hidden = true;
     view.hidden = false;
 
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     let cards = "";
 
@@ -66,15 +66,11 @@ function showCollections(categoryId) {
             </button>
 
             <h2 class="view-title">
-
                 ${category.title}
-
             </h2>
 
             <p class="view-description">
-
                 ${category.description}
-
             </p>
 
             <div class="projects-grid">
@@ -88,13 +84,12 @@ function showCollections(categoryId) {
     `;
 
     // Back Button
-
     document
         .getElementById("backHome")
         .addEventListener("click", goHome);
 
-    // Collection Buttons
 
+    // Collection Buttons
     document
         .querySelectorAll(".collection-btn")
         .forEach(button => {
@@ -102,10 +97,8 @@ function showCollections(categoryId) {
             button.addEventListener("click", () => {
 
                 showCollection(
-
                     button.dataset.category,
                     button.dataset.collection
-
                 );
 
             });
@@ -127,8 +120,6 @@ function showCollection(categoryId, collectionId) {
 
     if (!category) return;
 
-
-
     const collection = category.collections.find(
         item => item.id === collectionId
     );
@@ -139,21 +130,66 @@ function showCollection(categoryId, collectionId) {
 
     let works = "";
 
+
+    // ========================================
+    // Create Cards
+    // ========================================
+
     collection.works.forEach(work => {
 
-        works += `
+        let media = "";
 
-            <article class="project-card">
+        // If the work is a video
+        if (work.type === "video") {
+
+            media = `
+
+                <video
+                    class="work-video"
+                    muted
+                    preload="metadata">
+
+                    <source
+                        src="${work.video}"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            `;
+
+        }
+
+        // Otherwise display image
+        else {
+
+            media = `
 
                 <img
                     src="${work.image}"
                     alt="${work.title}">
 
+            `;
+
+        }
+
+
+        works += `
+
+            <article class="project-card">
+
+                ${media}
+
                 <div class="project-content">
 
-                    <h3>${work.title}</h3>
+                    <h3>
+                        ${work.title}
+                    </h3>
 
-                    <p>${work.description}</p>
+                    <p>
+                        ${work.description}
+                    </p>
 
                     <button
                         class="project-btn artwork-btn"
@@ -161,7 +197,9 @@ function showCollection(categoryId, collectionId) {
                         data-collection="${collectionId}"
                         data-work="${work.id}">
 
-                        View Artwork →
+                        ${work.type === "video"
+                            ? "Watch Demo →"
+                            : "View Artwork →"}
 
                     </button>
 
@@ -172,6 +210,7 @@ function showCollection(categoryId, collectionId) {
         `;
 
     });
+
 
     view.innerHTML = `
 
@@ -186,15 +225,11 @@ function showCollection(categoryId, collectionId) {
             </button>
 
             <h2 class="view-title">
-
                 ${collection.title}
-
             </h2>
 
             <p class="view-description">
-
                 ${collection.description}
-
             </p>
 
             <div class="projects-grid">
@@ -207,6 +242,9 @@ function showCollection(categoryId, collectionId) {
 
     `;
 
+
+    // Back Button
+
     document
         .getElementById("backCollections")
         .addEventListener("click", () => {
@@ -214,6 +252,9 @@ function showCollection(categoryId, collectionId) {
             showCollections(categoryId);
 
         });
+
+
+    // Artwork / Video Buttons
 
     document
         .querySelectorAll(".artwork-btn")
@@ -237,7 +278,7 @@ function showCollection(categoryId, collectionId) {
 
 
 // ========================================
-// Show Artwork Details
+// Show Artwork / Video Details
 // ========================================
 
 function showArtwork(categoryId, collectionId, workId) {
@@ -246,15 +287,70 @@ function showArtwork(categoryId, collectionId, workId) {
         item => item.id === categoryId
     );
 
+    if (!category) return;
+
+
     const collection = category.collections.find(
         item => item.id === collectionId
     );
+
+    if (!collection) return;
+
 
     const work = collection.works.find(
         item => item.id === workId
     );
 
+    if (!work) return;
+
+
     const view = document.getElementById("portfolioView");
+
+
+    // ========================================
+    // Media
+    // ========================================
+
+    let media = "";
+
+
+    if (work.type === "video") {
+
+        media = `
+
+            <video
+                class="artwork-video"
+                controls
+                autoplay>
+
+                <source
+                    src="${work.video}"
+                    type="video/mp4">
+
+                Your browser does not support video.
+
+            </video>
+
+        `;
+
+    }
+
+    else {
+
+        media = `
+
+            <img
+                src="${work.image}"
+                alt="${work.title}">
+
+        `;
+
+    }
+
+
+    // ========================================
+    // Page
+    // ========================================
 
     view.innerHTML = `
 
@@ -268,20 +364,39 @@ function showArtwork(categoryId, collectionId, workId) {
 
             </button>
 
+
             <div class="artwork-details">
 
-                <img
-                    class="artwork-image"
-                    src="${work.image}"
-                    alt="${work.title}">
+
+                <div class="artwork-image">
+
+                    ${media}
+
+                </div>
+
 
                 <div class="artwork-info">
 
-                    <h2>${work.title}</h2>
+                    <h2>
+                        ${work.title}
+                    </h2>
 
-                    <p>${work.description}</p>
+
+                    <p class="artwork-category">
+
+                        ${collection.title}
+
+                    </p>
+
+
+                    <p class="artwork-description">
+
+                        ${work.description}
+
+                    </p>
 
                 </div>
+
 
             </div>
 
@@ -289,11 +404,17 @@ function showArtwork(categoryId, collectionId, workId) {
 
     `;
 
+
+    // Back Button
+
     document
         .getElementById("backGallery")
         .addEventListener("click", () => {
 
-            showCollection(categoryId, collectionId);
+            showCollection(
+                categoryId,
+                collectionId
+            );
 
         });
 
