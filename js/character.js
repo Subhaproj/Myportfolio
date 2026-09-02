@@ -166,6 +166,79 @@ const loader = new FBXLoader();
 let startPosition = new THREE.Vector3();
 
 // ======================
+// Responsive Character
+// ======================
+function updateCharacterResponsive() {
+
+    if (!avatar) return;
+
+    const width = window.innerWidth;
+
+    let scale;
+    let positionX;
+
+    // Mobile
+    if (width <= 480) {
+
+        scale = 0.32;
+        positionX = 2.2;
+
+    }
+
+    // Tablet
+    else if (width <= 768) {
+
+        scale = 0.40;
+        positionX = 2.5;
+
+    }
+
+    // Small laptop / tablet landscape
+    else if (width <= 1200) {
+
+        scale = 0.47;
+        positionX = 3;
+
+    }
+
+    // Desktop
+    else {
+
+        scale = 0.5;
+        positionX = 6.8;
+
+    }
+
+    // Apply scale
+    avatar.scale.set(
+        scale,
+        scale,
+        scale
+    );
+
+    // Recalculate character bounds
+    const box =
+        new THREE.Box3().setFromObject(avatar);
+
+    const center =
+        box.getCenter(
+            new THREE.Vector3()
+        );
+
+    // Apply responsive position
+    avatar.position.set(
+        positionX,
+        -box.min.y + 0.1,
+        -center.z
+    );
+
+    // Update animation starting position
+    startPosition.copy(
+        avatar.position
+    );
+}
+
+// ======================
 // Load Character
 // ======================
 loader.load(
@@ -185,14 +258,7 @@ loader.load(
 
         scene.add(avatar);
 
-        // ======================
-        // Character Scale
-        // ======================
-        avatar.scale.set(
-            0.5,
-            0.5,
-            0.5
-        );
+        
 
         // ======================
         // Find Head Bone
@@ -235,16 +301,10 @@ loader.load(
                 new THREE.Vector3()
             );
 
-        avatar.position.set(
-            6.8,
-            -box.min.y + 0.1,
-            -center.z
-        );
 
-        // Save original position
-        startPosition.copy(
-            avatar.position
-        );
+       updateCharacterResponsive();
+
+       
 
         avatar.rotation.y = -0.5;
 
@@ -481,20 +541,7 @@ if (
     }
 
     // Configure animation
-    action.reset();
-
-    action.setLoop(
-        THREE.LoopOnce,
-        1
-    );
-
-    action.clampWhenFinished = true;
-
-    action.fadeIn(0.3);
-
-    action.timeScale = 0.7;
-
-    action.play();
+   
 
     currentAnimation = name;
 
@@ -705,9 +752,11 @@ window.addEventListener(
             height
         );
 
+        // Update character size and position
+        updateCharacterResponsive();
+
     }
 );
-
 // ======================
 // Render Loop
 // ======================
