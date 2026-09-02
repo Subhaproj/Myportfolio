@@ -182,7 +182,7 @@ function updateCharacterResponsive() {
     if (width <= 480) {
 
         scale = 0.50;
-        positionX = 1.9;
+        positionX = 0;
         rotationY = -0.15;
 
     }
