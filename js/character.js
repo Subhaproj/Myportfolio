@@ -181,7 +181,7 @@ function updateCharacterResponsive() {
     // Mobile
     if (width <= 480) {
 
-        scale = 0.40;
+        scale = 0.50;
         positionX = 2.2;
         rotationY = -0.15;
 
@@ -190,8 +190,8 @@ function updateCharacterResponsive() {
     // Tablet
     else if (width <= 768) {
 
-        scale = 0.40;
-        positionX = 2.5;
+        scale = 0.5;
+        positionX = 4;
         rotationY = -0.25;
 
     }
@@ -200,7 +200,7 @@ function updateCharacterResponsive() {
     else if (width <= 1200) {
 
         scale = 0.47;
-        positionX = 3;
+        positionX = 3.9;
         rotationY = -0.35;
 
     }
@@ -209,7 +209,7 @@ function updateCharacterResponsive() {
     else {
 
         scale = 0.5;
-        positionX = 6.8;
+        positionX = 6;
         rotationY = -0.5;
 
     }
