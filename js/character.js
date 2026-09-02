@@ -176,12 +176,14 @@ function updateCharacterResponsive() {
 
     let scale;
     let positionX;
+    let rotationY;
 
     // Mobile
     if (width <= 480) {
 
-        scale = 0.39;
+        scale = 0.40;
         positionX = 2.2;
+        rotationY = -0.15;
 
     }
 
@@ -190,6 +192,7 @@ function updateCharacterResponsive() {
 
         scale = 0.40;
         positionX = 2.5;
+        rotationY = -0.25;
 
     }
 
@@ -198,6 +201,7 @@ function updateCharacterResponsive() {
 
         scale = 0.47;
         positionX = 3;
+        rotationY = -0.35;
 
     }
 
@@ -206,6 +210,7 @@ function updateCharacterResponsive() {
 
         scale = 0.5;
         positionX = 6.8;
+        rotationY = -0.5;
 
     }
 
@@ -231,6 +236,7 @@ function updateCharacterResponsive() {
         -box.min.y + 0.1,
         -center.z
     );
+    avatar.rotation.y = rotationY;
 
     // Update animation starting position
     startPosition.copy(
@@ -251,10 +257,7 @@ loader.load(
 
         avatar = fbx;
 
-        // ======================
-        // Character Rotation
-        // ======================
-        avatar.rotation.y = Math.PI;
+        
 
         scene.add(avatar);
 
@@ -306,7 +309,7 @@ loader.load(
 
        
 
-        avatar.rotation.y = -0.5;
+        
 
         // ======================
         // Camera Target
