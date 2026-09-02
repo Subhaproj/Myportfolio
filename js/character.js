@@ -180,7 +180,7 @@ function updateCharacterResponsive() {
     // Mobile
     if (width <= 480) {
 
-        scale = 0.32;
+        scale = 0.39;
         positionX = 2.2;
 
     }
