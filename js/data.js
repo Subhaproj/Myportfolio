@@ -98,7 +98,7 @@ const portfolio = {
                 },
                 {
                     id: "portfolio",
-                    title: "My Talents",
+                    title: "My Portfolio site",
                     description: "Web application using HTML,CSS,JS.",
                     image: "assets/software/portfolio/home.png",
                     works: []
@@ -354,6 +354,12 @@ const portfolio = {
                             title: "Tree",
                             image: "assets/art/paintings/alonetree.png",
                             description: "A Standalone Tree."
+                        },
+                        {
+                            id: "meet eye",
+                            title: "The Way You Look at Me",
+                            image: "assets/art/paintings/meeteye.jpg",
+                            description: "Two gazes meet in a quiet moment of connection, where emotions are felt rather than spoken."
                         },
 
                     ]
