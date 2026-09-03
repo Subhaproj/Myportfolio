@@ -358,7 +358,7 @@ const portfolio = {
                         {
                             id: "meet eye",
                             title: "The Way You Look at Me",
-                            image: "assets/art/paintings/meeteye.jpg",
+                            image: "assets/art/paintings/meeteye.jpeg",
                             description: "Two gazes meet in a quiet moment of connection, where emotions are felt rather than spoken."
                         },
 
