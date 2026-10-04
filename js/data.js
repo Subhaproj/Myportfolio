@@ -15,16 +15,16 @@ const portfolio = {
                     id: "food-app",
                     title: "Food Delivery App",
                     description: "Complete UI case study.",
-                    image: "assets/projects/ui/ui-cover.jpg",
+                    image: "assets/covers-projects/ui/ui-cover.jpg",
                     works: []
                 },
                 {
                     id: "WonderPark-app",
                     title: "Amusement Park App",
                     description: "Complete UI case study.",
-                    image: "assets/projects/ui/Wonderpark-cover.jpg",
+                    image: "assets/covers-projects/ui/Wonderpark-cover.jpg",
                     works: []
-                },
+                }
 
             ]
         },
@@ -42,7 +42,7 @@ const portfolio = {
                     id: "slambook",
                     title: "Java Slam Book",
                     description: "Desktop application using Java.",
-                    image: "assets/projects/software/software-cover.jpg",
+                    image: "assets/covers-projects/software/software-cover.jpg",
                     works: [
                         {
                             id:"slambook-loading",
