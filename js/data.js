@@ -22,7 +22,7 @@ const portfolio = {
                     id: "WonderPark-app",
                     title: "Amusement Park App",
                     description: "Complete UI case study.",
-                    image: "assets/projects/ui/Wonderpark cover.png",
+                    image: "assets/projects/ui/Wonderpark-cover.jpg",
                     works: []
                 },
 
